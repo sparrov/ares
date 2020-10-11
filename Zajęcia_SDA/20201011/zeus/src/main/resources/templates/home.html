@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeus</title>
+</head>
+<body>
+<div th:each="person:${persons}">
+    <p>Name: <span th:text="${person.getName()}"></span></p>
+    <p>Name: <span th:text="${person.getSurname()}"></span></p>
+    <p>Name: <span th:text="${person.getAge()}"></span></p>
+    <hr/>
+</div>
+</body>
+</html>
