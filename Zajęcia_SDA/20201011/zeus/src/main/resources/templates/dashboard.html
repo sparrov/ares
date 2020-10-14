@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:comment="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}" type="text/css" />
+
 </head>
 <body>
-...
+<!--<pre th:text="${menu}"></pre>
+<pre th:text="${article}"></pre>-->
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group">
+                <li th:each="item : ${menu}"  class="list-group-item">
+                    <a th:href="${item.url}" th:text="${item.name}" target="_blank">...</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-8">
+            <div class="jumbotron">
+                <h3 class="display-4" th:text="${article.title}">...</h3>
+                <p th:text="${article.text}">lorem...</p>
+
+                <ul class="list-group">
+                    <li th:each="comment: ${article.comments}" class="list-group-item" th:text="${comment.text}">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </body>
 </html>

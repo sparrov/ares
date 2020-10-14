@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" th:href="@{mainstyle.css}" type="text/css">
+
+</head>
+<body>
+
+<div th:replace="~{fragments/navigation :: navbar}"></div>
+
+<h1 th:text="${h1}">About</h1>
+
+<div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+<div class="card-group workers-cards">
+    <div class="card" th:each="worker : ${workers}">
+        <img th:src="${worker.imgUrl}" class="card-img-top" alt="...">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <span th:text="${worker.position}">Position</span>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Imię: <span th:text="${worker.name}">Worker name</span></span></li>
+                <li class="list-group-item">Nazwisko: <span th:text="${worker.surname}">Worker surname</span></li>
+                <li class="list-group-item">Wiek: <span th:text="${worker.age}">Worker age</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer}"></div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.szymonwrobel.module.dashboard;
+package com.szymonwrobel.module.dashboard.dto;
 
 import java.util.List;
 
@@ -35,5 +35,12 @@ public class ArticleDto {
         return this;
     }
 
-
+    @Override
+    public String toString() {
+        return "ArticleDto{" +
+                "title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", comments=" + comments +
+                '}';
+    }
 }

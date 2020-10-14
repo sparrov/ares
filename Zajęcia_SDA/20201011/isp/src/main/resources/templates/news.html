@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">News</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div th:replace="~{fragments/navigation :: navbar}"></div>
+
+<h1 th:text="${h1}">News</h1>
+
+<!--<pre th:text="${newsMenu}"></pre>
+<pre th:text="${article}"></pre>-->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group" th:each="menuItem : ${newsMenu}">
+                <li class="list-group-item">
+                    <a th:href="${menuItem.url}" th:text="${menuItem.category}" target="_blank">Menu category</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-8">
+            <div class="jumbotron">
+                <h1 class="display-4" th:text="${article.title}">Title of article</h1>
+                <p class="lead" th:text="${article.dateTimeOfArticle}">Date of article</p>
+                <p class="lead" th:text="${article.teaser}">Teaser of article</p>
+                <hr class="my-4">
+                <p th:text="${article.contentOfArticle}">Content of article</p>
+                <div class="list-group" th:each="comment : ${article.comments}">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" ></h5>
+                        <small class="text-muted" th:text="${comment.dateTimeOfComment}">Date</small>
+                    </div>
+                    <p class="mb-1" th:text="${comment.contentOfComment}"></p>
+                    <small class="text-muted" th:text="${comment.author}">Username</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="~{fragments/footer}"></div>
+
+</body>
+</html>

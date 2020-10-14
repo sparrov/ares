@@ -1,4 +1,4 @@
-package com.szymonwrobel.module.dashboard;
+package com.szymonwrobel.module.dashboard.dto;
 
 public class CommentDto {
 
@@ -16,5 +16,13 @@ public class CommentDto {
 
     public String getText() {
         return text;
+    }
+
+    @Override
+    public String toString() {
+        return "CommentDto{" +
+                "author='" + author + '\'' +
+                ", text='" + text + '\'' +
+                '}';
     }
 }

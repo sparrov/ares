@@ -1,4 +1,4 @@
-package com.szymonwrobel.module.dashboard;
+package com.szymonwrobel.module.dashboard.dto;
 
 public class MenuDto {
 
@@ -16,5 +16,13 @@ public class MenuDto {
 
     public String getUrl() {
         return url;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuDto{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
