@@ -1,5 +1,6 @@
 package com.szymonwrobel.module.books;
 
+import com.szymonwrobel.module.books.entity.BooksEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
